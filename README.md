@@ -27,3 +27,4 @@ Click or press Enter/Space on an empty cell to mark it.
 First to align three in a row (horizontal/vertical/diagonal) wins.
 
 Use Reset to start a new round.
+--
