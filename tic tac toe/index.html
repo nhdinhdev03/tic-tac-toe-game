@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe — Vanilla JS</title>
+
+    <!-- Google Fonts (UI gọn gàng hơn) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main
+      class="container"
+      role="application"
+      aria-label="Trò chơi Tic Tac Toe"
+    >
+      <header class="topbar">
+        <h1 class="brand" aria-label="Tic Tac Toe">Tic Tac Toe</h1>
+
+        <div class="scoreboard" aria-label="Bảng điểm">
+          <div class="score">
+            <span aria-hidden="true">X</span>
+            <span class="sr-only">Điểm X:</span>
+            <strong id="scoreX">0</strong>
+          </div>
+          <div class="score">
+            <span aria-hidden="true">O</span>
+            <span class="sr-only">Điểm O:</span>
+            <strong id="scoreO">0</strong>
+          </div>
+          <div class="score">
+            <span aria-hidden="true">Hòa</span>
+            <span class="sr-only">Số ván hòa:</span>
+            <strong id="scoreD">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="status">
+        <div
+          id="announce"
+          class="announce"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          Chuẩn bị bắt đầu…
+        </div>
+
+        <div class="controls">
+          <button id="btnNew" class="btn" type="button" title="Bắt đầu ván mới">
+            Ván mới
+          </button>
+          <button
+            id="btnReset"
+            class="btn btn-ghost"
+            type="button"
+            title="Xóa điểm & làm mới"
+          >
+            Reset tất cả
+          </button>
+        </div>
+      </section>
+
+      <section class="options" aria-label="Tùy chọn trận">
+        <label
+          >Chế độ
+          <select id="mode">
+            <option value="human">2 người</option>
+            <option value="bot" selected>Vs Máy</option>
+          </select>
+        </label>
+
+        <label
+          >Độ khó
+          <select id="level">
+            <option value="easy">Dễ</option>
+            <option value="medium" selected>Trung bình</option>
+            <option value="hard">Bất bại</option>
+          </select>
+        </label>
+
+        <label
+          >Bạn chơi
+          <select id="humanSymbol">
+            <option value="X" selected>X</option>
+            <option value="O">O</option>
+          </select>
+        </label>
+
+        <label
+          >Bên đi trước
+          <select id="first">
+            <option value="X">X</option>
+            <option value="O">O</option>
+            <option value="auto" selected>Ngẫu nhiên</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="board" aria-label="Bàn 3x3">
+        <!-- 9 ô (button để có sẵn hỗ trợ bàn phím) -->
+        <button class="cell" data-i="0" aria-label="Ô 1"></button>
+        <button class="cell" data-i="1" aria-label="Ô 2"></button>
+        <button class="cell" data-i="2" aria-label="Ô 3"></button>
+        <button class="cell" data-i="3" aria-label="Ô 4"></button>
+        <button class="cell" data-i="4" aria-label="Ô 5"></button>
+        <button class="cell" data-i="5" aria-label="Ô 6"></button>
+        <button class="cell" data-i="6" aria-label="Ô 7"></button>
+        <button class="cell" data-i="7" aria-label="Ô 8"></button>
+        <button class="cell" data-i="8" aria-label="Ô 9"></button>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Phím tắt: <kbd>Tab</kbd> để di chuyển ô, <kbd>Enter</kbd>/<kbd
+            >Space</kbd
+          >
+          để đánh dấu, mũi tên <kbd>← → ↑ ↓</kbd> để di chuyển trong lưới.
+        </p>
+      </footer>
+    </main>
+      <div id="banner" class="banner" aria-hidden="true"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
